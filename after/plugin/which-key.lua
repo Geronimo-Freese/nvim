@@ -11,7 +11,8 @@ wk.register({
         name = "file",
         F = { vim.lsp.buf.format, "Format current buffer" },
         f = { builtin.find_files, "Find File" },
-        g = { builtin.git_files, "Find Git-Files" },
+        g = { builtin.grep_string, "Grep for Files" },
+        G = { builtin.git_files, "Find Git-Files" },
         h = { harpoon_telescope.extensions.harpoon.marks, "Harpoon" },
         s = {
             function()
@@ -45,6 +46,11 @@ wk.register({
     c = {
         name = "Code Actions",
         c = { neogen.generate, "Generate Documentation String" },
+        a = { vim.lsp.buf.code_action, "Code Actions?"},
+        d = { builtin.lsp_definitions, "Goto definition" },
+        i = { builtin.lsp_implementations, "Goto implementation" },
+        r = { builtin.lsp_references, "List references" },
+        s = { builtin.lsp_workspace_symbols, "List symbols" },
     },
 }, { prefix = "<leader>" })
 
